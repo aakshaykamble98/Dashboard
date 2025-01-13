@@ -548,8 +548,14 @@ def create_ppt_PSI(df, fig1_bytes, fig2_bytes, thresholds_psi, data_comment, gra
 
 # Function to create the threshold selection UI for PSI
 def threshold_selection_PSI(show_ui=True):
+    # Base directory of the current script
+    base_dir = os.path.dirname(__file__)
+    
+    # Construct the path for the thresholds file
+    file_path = os.path.join(base_dir, 'pkl', 'model_psi.pkl')
+
     try:
-        with open('pkl/model_psi.pkl', 'rb') as k:
+        with open(file_path, 'rb') as k:
             thresholds_psi = pickle.load(k)
     except FileNotFoundError:
         thresholds_psi = None
@@ -565,7 +571,7 @@ def threshold_selection_PSI(show_ui=True):
         amber_lower =None
         amber_upper = None
         red_threshold = None
-        
+
     if show_ui:
         with st.expander('Please select the PSI threshold values'):
             st.markdown('<hr style="margin-top: -5px; margin-bottom: -5px;">', unsafe_allow_html=True)
@@ -612,7 +618,13 @@ def threshold_selection_PSI(show_ui=True):
             'amber_psi': {'lower': amber_lower, 'upper': amber_upper},
             'red_psi': {'value': red_threshold}
         }
-        with open('pkl/model_psi.pkl', 'wb') as k:
+        # Base directory of the current script
+        base_dir = os.path.dirname(__file__)
+        
+        # Construct the path for the thresholds file
+        file_path = os.path.join(base_dir, 'pkl', 'model_psi.pkl')
+    
+        with open(file_path, 'wb') as k:
             pickle.dump(thresholds_psi, k)
 
     return {
