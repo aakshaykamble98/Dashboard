@@ -88,8 +88,11 @@ def create_ppt(bg_color, font_color, ribbon_color_1, ribbon_color_2, row_bg_colo
     p.font.color.rgb = RGBColor.from_string(ribbon_font_2[1:])
     p.alignment = PP_ALIGN.RIGHT
     
-    # Add logo image
-    logo_path = 'Images/ENBD_s.jpg'  # Replace with your actual file path
+    # Add logo image to the upper right corner
+    base_dir = os.path.dirname(__file__)
+    
+    # Logo path
+    logo_path = os.path.join(base_dir, 'Images', 'ENBD_s.jpg')  # Replace with your actual file path
     logo_left = slide_width - Inches(0.6)
     logo_top = Inches(0.15)
     logo_height = Inches(0.45)
