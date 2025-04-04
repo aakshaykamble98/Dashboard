@@ -1032,7 +1032,6 @@ def app():
             st.write("No data available for download in Excel. Please run the Overview and Change Log modules first.")
             
     with tab2:
-        
         st.markdown(
                 """
                 <div style='text-align: center;

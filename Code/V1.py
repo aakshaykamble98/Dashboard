@@ -29,6 +29,7 @@ from streamlit_option_menu import option_menu
 # from Code import gini, Calibration, PSI, Summary, Data
 import Summary, gini, Calibration, PSI, Data, Customization
 
+
 # Construct the path to the image
 image_path = os.path.join(os.path.dirname(__file__), 'Images', 'NIMBUS_logo.png')
 image = Image.open(image_path)
@@ -606,7 +607,7 @@ custom_css = """
 
     /* Change the background color of the main page */
     .stApp {
-        background-color: #f2f9f9;  /* Change this to your desired color */
+        background-color: #f3f5ff;  /* Change this to your desired color */
     }
 """
 
@@ -676,7 +677,7 @@ class MultiApp:
                 menu_icon='bank',
                 default_index=0,
                 styles={
-                    "container": {"padding": "20px", "background-color": "rgba(190, 215, 252, 0.38)", "border": "1.1px solid #A9A9A9", "border-radius": "7px",},
+                    "container": {"padding": "20px", "background-color": "rgba(180, 200, 282, 0.38)", "border": "1.1px solid #A9A9A9", "border-radius": "7px",},
                     "icon": {"color": "#272d55", "font-size": "17px"},
                     "nav-link": {"font-size": "14px", "text-align": "left", "margin": "0px", "color": "#272d55", "--hover-color": "#BED7FC8A", "font-family": "sans-serif"},
                     "nav-link-selected": {"background-color": "#B9D7F3", "border-left": "3px solid #272d55","color": "#272d55",},
@@ -723,7 +724,7 @@ class MultiApp:
             
 
             # Display image below the text
-            image_path = os.path.join(os.path.dirname(__file__), 'Images', 'Overview_1.jpg')
+            image_path = os.path.join(os.path.dirname(__file__), 'Images', 'Overview_2.png')
             image = Image.open(image_path)
             st.image(image, use_column_width=True)
             
@@ -767,7 +768,7 @@ class MultiApp:
             st.markdown(button_html, unsafe_allow_html=True)
 
 # =============================================================================
-#             #Creating new consolidated excel download button where we can download the excel template as there's
+#             #Creating new consolidated excel download button where we can download the excel template
 # =============================================================================
    
             
